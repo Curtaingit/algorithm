@@ -17,9 +17,11 @@ public class InsertSort<T extends Comparable<T>> extends Sort<T> {
     @Override
     public void sort(T[] nums) {
         int N = nums.length;
+        //i从第二个  到最后一个
         for (int i = 1; i < N; i++) {
-            for (int j = i; j > 0 && less(nums[i], nums[j - 1]); j--) {
-                swap(nums, i, j-1);
+            //如果右边的数小于左边那么久互换  一直到符合有序位置  j的起始值由i确定
+            for (int j = i; j > 0 && less(nums[j], nums[j - 1]); j--) {
+                swap(nums, j, j-1);
             }
         }
     }
