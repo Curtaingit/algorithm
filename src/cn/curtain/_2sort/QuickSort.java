@@ -11,7 +11,8 @@ import java.util.List;
 public class QuickSort<T extends Comparable<T>> extends Sort<T> {
     @Override
     public void sort(T[] nums) {
-
+        shuffle(nums);
+        sort(nums, 0, nums.length - 1);
     }
 
     private void sort(T[] nums, int l, int h) {
@@ -26,21 +27,23 @@ public class QuickSort<T extends Comparable<T>> extends Sort<T> {
     private void shuffle(T[] nums) {
         List<Comparable> list = Arrays.asList(nums);
         Collections.shuffle(list);
-        list.toArray();
+        list.toArray(nums);
     }
 
     private int partition(T[] nums, int l, int h) {
         int i = l, j = h + 1;
         T v = nums[l];
         while (true) {
-            while (less(nums[++i], v) && j != h) ;
-            while (less(v, nums[--j]) && j != l) ;
-            if (i > j)
+            while (less(nums[++i], v) && i != h) {
+            }
+            while (less(v, nums[--j]) && j != l) {
+            }
+            if (i >= j) {
                 break;
-            swap(nums, l, j);
-            return j;
+            }
+            swap(nums, i, j);
         }
-
+        swap(nums, l, j);
         return j;
     }
 }

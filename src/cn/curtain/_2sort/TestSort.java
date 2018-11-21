@@ -1,9 +1,6 @@
 package cn.curtain._2sort;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 /**
  * @author Curtain
@@ -12,7 +9,7 @@ import java.util.Set;
 public class TestSort {
 
     public static void main(String[] args) {
-        final Integer count = 10000000;
+        final Integer count = 8;
         long time;
 
         ShellSort<Integer> shellSort = new ShellSort<>();
@@ -20,19 +17,20 @@ public class TestSort {
         SelectSort<Integer> selectSort = new SelectSort<>();
         InsertSort<Integer> insertSort = new InsertSort<>();
         MergeSort<Integer> mergeSort = new MergeSort<>();
+        QuickSort<Integer> quickSort = new QuickSort<>();
 
 
         //当数据到一千万时  15s
-        time = System.currentTimeMillis();
-        shellSort.sort(initData(count));
-        System.out.println("希尔排序:" + String.valueOf(System.currentTimeMillis() - time) + "ms");
+//        time = System.currentTimeMillis();
+//        shellSort.sort(initData(count));
+//        System.out.println("希尔排序:" + String.valueOf(System.currentTimeMillis() - time) + "ms");
 
 //        //当数据到十万时  12s   最耗时     稳定
 //        time = System.currentTimeMillis();
 //        bubbleSort.sort(initData(count));
 //        System.out.println("冒泡排序:" + String.valueOf(System.currentTimeMillis() - time) + "ms");
 //
-//        //选择排序当数据到十万时   就可以抛弃了
+
 //
 //        //当数据到十万时 8s  优于冒泡  + 选择    但不稳定
 //        time = System.currentTimeMillis();
@@ -46,9 +44,14 @@ public class TestSort {
 //        System.out.println("插入排序:" + String.valueOf(System.currentTimeMillis() - time) + "ms");
 
         //当数据到一千万时  10s   优于希尔 并且比希尔排序稳定
+//        time = System.currentTimeMillis();
+//        mergeSort.sort(initData(count));
+//        System.out.println("归并排序:" + String.valueOf(System.currentTimeMillis() - time) + "ms");
+
+
         time = System.currentTimeMillis();
-        mergeSort.sort(initData(count));
-        System.out.println("归并排序:" + String.valueOf(System.currentTimeMillis() - time) + "ms");
+        quickSort.sort(initData(count));
+        System.out.println("快速排序:" + String.valueOf(System.currentTimeMillis() - time) + "ms");
 
 
 
