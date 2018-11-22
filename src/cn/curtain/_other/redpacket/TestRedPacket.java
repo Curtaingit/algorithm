@@ -15,7 +15,7 @@ public class TestRedPacket {
         RedPacket redPacket = new RedPacket();
         int count = 100;
         while (count-- > 0) {
-            List<Integer> list = redPacket.splitRedPacket(1000 * 100, 2);
+            List<Integer> list = redPacket.splitRedPacket(100 * 100, 2);
 //            List<Integer> list = redPacket.splitRedPacket(200*100, 20);
             System.out.println(list);
         }
