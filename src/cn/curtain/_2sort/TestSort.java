@@ -44,14 +44,15 @@ public class TestSort {
 //        System.out.println("插入排序:" + String.valueOf(System.currentTimeMillis() - time) + "ms");
 
         //当数据到一千万时  10s   优于希尔 并且比希尔排序稳定
-//        time = System.currentTimeMillis();
-//        mergeSort.sort(initData(count));
-//        System.out.println("归并排序:" + String.valueOf(System.currentTimeMillis() - time) + "ms");
-
-
         time = System.currentTimeMillis();
-        quickSort.sort(initData(count));
-        System.out.println("快速排序:" + String.valueOf(System.currentTimeMillis() - time) + "ms");
+
+        mergeSort.sort(initData(count));
+        System.out.println("归并排序:" + String.valueOf(System.currentTimeMillis() - time) + "ms");
+
+
+//        time = System.currentTimeMillis();
+//        quickSort.sort(initData(count));
+//        System.out.println("快速排序:" + String.valueOf(System.currentTimeMillis() - time) + "ms");
 
 
 
